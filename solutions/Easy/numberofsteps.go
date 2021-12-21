@@ -2,22 +2,7 @@ package main
 
 import "fmt"
 
-func minimum(a []int) int {
-
-	min := a[0]
-
-	for i := 0; i < len(a); i++ {
-
-		if a[i] <= min {
-			min = a[i]
-		}
-	}
-
-	return min
-
-}
-
-func main() {
+func numberofsteps() {
 
 	//array size
 	var size int
@@ -33,7 +18,7 @@ func main() {
 		fmt.Scanf("%d", &a[i])
 	}
 
-	min := minimum(a)
+	min := a[0]
 
 	//array 'b' of size 'size'
 
@@ -51,7 +36,7 @@ func main() {
 			a[i] = a[i] - b[i]
 			count = count + 1
 		}
-		if a[i] < min {
+		if a[i] <= min {
 			min = a[i]
 			i = 0
 		} else if a[i] < 0 {
@@ -63,3 +48,18 @@ func main() {
 
 	fmt.Println(count)
 }
+
+// func minimum(a []int) int {
+
+// 	min := a[0]
+
+// 	for i := 0; i < len(a); i++ {
+
+// 		if a[i] <= min {
+// 			min = a[i]
+// 		}
+// 	}
+
+// 	return min
+
+// }
